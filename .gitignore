@@ -1,0 +1,20 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output (for React)
+build/
+
+# Ignore environment variables
+.env
+
+# Ignore log files
+*.log
+
+# Ignore Vercel build output
+.vercel/
+
+# Ignore the dist directory (for Node.js)
+dist/
+
+# Ignore lock files
+package-lock.json
