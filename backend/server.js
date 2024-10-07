@@ -9,18 +9,17 @@ const app = express();
 
 const corsOptions = {
   origin: [
-    'http://localhost:3000',
-    'https://build-d0c8u1ym2-muhammadshoaib-webs-projects.vercel.app',
-    /\.vercel\.app$/  // This will allow all subdomains on vercel.app
+    'http://localhost:3000', // Local development
+    'https://build-d0c8u1ym2-muhammadshoaib-webs-projects.vercel.app', // Your Vercel app
+    /\.vercel\.app$/, // Allow all subdomains of vercel.app
   ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true, // Allow credentials (cookies, authorization headers)
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
 };
 
+// Apply CORS middleware
 app.use(cors(corsOptions));
-
-// Pre-flight request handling
 app.options('*', cors(corsOptions));
 
 app.use(express.json());
